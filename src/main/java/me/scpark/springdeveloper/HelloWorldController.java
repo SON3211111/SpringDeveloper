@@ -9,18 +9,23 @@ import  org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloWorldController {
 
+//    @GetMapping("/hello")
+//    public String hello(){
+//        return "Hello World";
+//    }
+
     @GetMapping("/hello")
-    public String hello(){
-        return "Hello World";
+    public String hello(@RequestParam("name") String name){
+        return "반갑습니다 " + name + " 님!";
     }
 
-    @GetMapping("/student")
-    public Student getStudent(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
-        return new Student(firstName, lastName);
-    }
-
-    @GetMapping("/student/{firstName}/{lastName}")
-    public Student getStudent2(@PathVariable("firstName")String firstName, @PathVariable("lastName")String lastName){
-        return new Student(firstName, lastName);
-    }
+//    @GetMapping("/student")
+//    public Student getStudent(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
+//        return new Student(firstName, lastName);
+//    }
+//
+//    @GetMapping("/student/{firstName}/{lastName}")
+//    public Student getStudent2(@PathVariable("firstName")String firstName, @PathVariable("lastName")String lastName){
+//        return new Student(firstName, lastName);
+//    }
 }
